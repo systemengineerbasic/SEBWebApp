@@ -5,7 +5,7 @@
         <li> 現在の信号機は、{{color}] 色です</li>
         <li> 現在の時刻は {{now}} 。</li>
     </ul>
-    <form method="post" action="/pushSignal">
+    <form method="post" action="/">
         <input type="text" name="input_color">
         <input type="submit" value="MQTT_Publish">
     </form>
