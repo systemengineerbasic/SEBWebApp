@@ -1,8 +1,15 @@
 <html>
     <body>
+    <h2> シススク サンプル Web アプリケーション </h2>
     <ul>
-        <li> Hello シススク！</li>
-        <li> 現在の時刻は {{now}} です。</li>
+        <li> 現在の信号機は、{{color}] 色です</li>
+        <li> 現在の時刻は {{now}} 。</li>
     </ul>
+    <form method="post" action="/pushSignal">
+        <input type="text" name="input_color">
+        <input type="submit" value="MQTT_Publish">
+    </form>
+    </br>
+    信号機に {{scolor}} 色を指定しました。 
     </body>
 </html>
