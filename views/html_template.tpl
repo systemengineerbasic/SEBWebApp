@@ -13,9 +13,9 @@
     </figure>
     <p>
     <form method="post" action="/">
-        <input type="radio" name="red" value="signal_red"> 赤
-        <input type="radio" name="yellow" value="signal_yellow"> 黄
-        <input type="radio" name="blue" value="signal_blue"> 青
+        <input type="radio" name="input_color" value="signal_red"> 赤
+        <input type="radio" name="input_color" value="signal_yellow"> 黄
+        <input type="radio" name="input_color" value="signal_blue"> 青
         <input type="submit" value="MQTT_Publish">
     </form>
     </p>
