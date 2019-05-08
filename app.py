@@ -5,7 +5,7 @@ from datetime import datetime
 
 #static file を読み込み、/static/ フォルダー内のファイル *.png 等を、./static/*.png と返す。
 @route('/static/<file_path:path>')
-def sever_static(file_path):
+def server_static(file_path):
     return static_file(file_path,root='./static/')
 
 @route("/")
