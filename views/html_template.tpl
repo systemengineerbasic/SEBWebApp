@@ -11,10 +11,14 @@
     <legend> 信号機の状態 </legend>
     <img src="./static/signal_full.png">
     </figure>
+    <p>
     <form method="post" action="/">
-        <input type="text" name="input_color">
+        <input type="radio" name="red" value="signal_red"> 赤
+        <input type="radio" name="yellow" value="signal_yellow"> 黄
+        <input type="radio" name="blue" value="signal_blue"> 青
         <input type="submit" value="MQTT_Publish">
     </form>
+    </p>
     </br>
     信号機に {{scolor}} 色を指定しました。 
     </body>
