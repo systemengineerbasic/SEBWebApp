@@ -9,10 +9,17 @@ from datetime import datetime
 def server_static(file_path):
     return static_file(file_path,root='./static/')
 
+# Set your CloudMQTT environment information
+broker_url = "m15.cloudmqtt.com"
+port = 13415
+user = "niccngso"
+password = "6UKWREecCBYB"
+
 @route("/")
 def hello_world():
     now = datetime.now()
-    return template('html_template', now=now, color='', scolor='')
+    signal = "./static/signal_full.png"
+    return template('html_template', now=now, color='', scolor='', signalpic='signal')
 
 @route("/", method='POST')
 def push_signal():

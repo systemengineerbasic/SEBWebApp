@@ -9,7 +9,7 @@
     </p>
     <figure>
     <legend> 信号機の状態 </legend>
-    <img src="./static/signal_full.png">
+    <img src="{{signalpic}}">
     </figure>
     <p>
     <form method="post" action="/">
