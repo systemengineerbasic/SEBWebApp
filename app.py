@@ -19,7 +19,7 @@ password = "6UKWREecCBYB"
 def hello_world():
     now = datetime.now()
     signal = "./static/signal_full.png"
-    return template('html_template', now=now, color='', scolor='', signalpic='signal')
+    return template('html_template', now=now, color='', scolor='', signalpic=signal)
 
 @route("/", method='POST')
 def push_signal():
