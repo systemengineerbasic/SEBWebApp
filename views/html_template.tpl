@@ -12,18 +12,18 @@
                 function onConnectionLost(){
                     console.log("connection lost");
                     document.getElementById("status").innerHTML = "Connection Lost";
-                    document.getElementById("messages").innerHTML ="Connection Lost";
+                    document.getElementById("messages").innerHTML = "Connection Lost";
                     connected_flag=0;
                 }
 
                 function onFailure(message){
                     console.log("Failed");
-                    document.getElementById("messages").innerHTML = "Connection Failed- Retrying";
+                    document.getElementById("messages").innerHTML = "Connection Failed - Retrying";
                     setTimeout(MQTTconnect, reconnectTimeout);
                 }
 
                 function onConnect(){
-                    document.getElementById("messages").innerHTML="Connected to "+host +"on port "+port;
+                    document.getElementById("messages").innerHTML="Connected to "+host+" on port "+port;
                     connected_flag=1
                     document.getElementById("status").innerHTML = "Connected";
                     console.log("on Connect " +connected_flag);
@@ -31,8 +31,7 @@
                 }
 
                 function onMessageArrived(r_message){
-                    out_msg="Message received "+r_message.payloadString+"<br>";
-                    out_msg=out_msg+"Message received Topic ",r_message.destinationName;
+                    out_msg="TOPIC : " + r_message.destinationName + "Message : " + r_message.payloadString;
                     //console.log("Message received ",r_message.payloadString);
                     console.log(out_msg);
                     document.getElementById("messages").innerHTML =out_msg;
@@ -99,19 +98,21 @@
         <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;RED&quot;}"> 赤
         <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;YELLOW&quot;}"> 黄
         <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;BLUE&quot;}"> 青
-        <input type="submit" value="Submit">
+        <input type="submit" value="MQTT Publish">
     </form>
     </p>
     <p>
+    <!-- post Method のフォームを Python に送るサンプル フォーム
     <form method="post" action="/">
         <input type="radio" name="input_color" value="RED"> 赤
         <input type="radio" name="input_color" value="YELLOW"> 黄
         <input type="radio" name="input_color" value="BLUE"> 青
         <input type="submit" value="MQTT_Publish">
     </form>
+    -->
     </p>
     </br>
     信号機に {{scolor}} 色を指定しました。 <br>
-    信号の状態:<p id="messages"></p>
+    信号機の状態 (CloudMQTT 側の最新メッセージ):<p id="messages"></p>
     </body>
 </html>
