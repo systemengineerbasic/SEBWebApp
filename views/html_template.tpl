@@ -89,12 +89,12 @@
     現在の時刻： {{now}}
     </p> 
 
-    CloudMQTT Server への接続 Status：
+    CloudMQTT 接続 Status：
     <div id="status">Connection Status: Not Connected</div>
     <br>
     <br>
 
-    CloudMQTT からの信号機の状態：<p id="messages"></p>
+    信号機の状態：<p id="messages"></p>
 
     <br>
     <br>
