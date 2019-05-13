@@ -96,9 +96,9 @@
     </figure>
     <p>
     <form name="smessage" action="" onsubmit="return send_messages()">
-        <input type="radio" name="input_color" value="{\"deviceName\":\"Webclient\",\"LED\":\"RED\"}"> 赤
-        <input type="radio" name="input_color" value="{\"deviceName\":\"Webclient\",\"LED\":\"YELLOW\"}"> 黄
-        <input type="radio" name="input_color" value="{\"deviceName\":\"Webclient\",\"LED\":\"BLUE\"}"> 青
+        <input type="radio" name="input_color" value="{"deviceName":"Webclient","LED":"RED"}"> 赤
+        <input type="radio" name="input_color" value="{"deviceName":"Webclient","LED":"YELLOW"}"> 黄
+        <input type="radio" name="input_color" value="{"deviceName":"Webclient","LED":"BLUE"}"> 青
         <input type="submit" value="Submit">
     </form>
     </p>
