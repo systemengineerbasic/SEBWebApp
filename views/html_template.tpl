@@ -19,7 +19,7 @@
 
                 function onMessageArrived(r_message){
                     out_msg="Message received "+r_message.payloadString+"<br>";
-                    out_msg=out_msg+"Message received ",r_message.payloadString);
+                    out_msg=out_msg+"Message received Topic ",r_message.destinationName;
                     //console.log("Message received ",r_message.payloadString);
                     console.log(out_msg);
                     document.getElementById("messages").innerHTML =out_msg;
