@@ -96,11 +96,8 @@
 
     信号機の状態：<p id="messages"></p>
 
-    <br>
-    <br>
-
     <figure>
-    <legend> 信号機の状態 </legend>
+    <legend> 信号機 </legend>
     <img src="{{signalpic}}">
     </figure>
     <br>
