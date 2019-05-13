@@ -38,7 +38,6 @@
                         userName:"niccngso",
                         password:"6UKWREecCBYB",
                         onSuccess:onConnect,
-                        onFailure: onFailure,
                     };
                     mqtt.onConnectionLost = onConnectionLost;
                     mqtt.onMessageArrived = onMessageArrived;
