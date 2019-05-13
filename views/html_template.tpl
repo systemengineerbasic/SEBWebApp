@@ -87,18 +87,20 @@
 
     <p>
     現在の時刻： {{now}}
-    <br> 
-    CloudMQTT への接続状態
+    </p> 
+
+    CloudMQTT Server への接続 Status：
     <div id="status">Connection Status: Not Connected</div>
-    <br>
-    </p>
 
     CloudMQTT からの信号機の状態:<p id="messages"></p>
 
+    <p>
     <figure>
     <legend> 信号機の状態 </legend>
     <img src="{{signalpic}}">
     </figure>
+    <br>
+    </p>
 
     <p>
     CloudMQTT に強制的に信号の色を Publish
@@ -123,6 +125,6 @@
     </br>
     信号機に {{scolor}} 色を指定しました。 <br>
     -->
-    
+
     </body>
 </html>
