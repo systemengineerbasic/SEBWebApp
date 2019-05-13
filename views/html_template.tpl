@@ -50,7 +50,7 @@
                 function send_messages(){
                     document.getElementById("messages").innerHTML="";
                     if (connected_flag==0){
-                        out_msg='<b>Not Connected so can't send</b>"
+                        out_msg="<b>Not Connected so can't send</b>"
                         console.log(out_msg);
                         document.getElementById("messages").innerHTML = out_msg;
                         return false;
