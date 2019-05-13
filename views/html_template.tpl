@@ -6,8 +6,8 @@
             <script type = "text/javascript" language = "javascript">
                 var mqtt;
                 var reconnectTimeout = 2000;
-                var host = "m15.cloudmqtt.com";
-                var port = 33415;
+                var host = "m15.cloudmqtt.com"; //CloudMQTT のホスト URI
+                var port = 33415;　//WebSockets Port (TLS で接続するため)
 
                 function onConnectionLost(){
                     console.log("connection lost");
@@ -48,8 +48,8 @@
                     var options = {
                         useSSL:true,
                         timeout:3,
-                        userName:"niccngso",
-                        password:"6UKWREecCBYB",
+                        userName:"niccngso", //CloudMQTT の User 名
+                        password:"6UKWREecCBYB", //CloudMQTT の Password
                         onSuccess:onConnect,
                     };
                     mqtt.onConnectionLost = onConnectionLost;
@@ -71,6 +71,7 @@
                     console.log(msg);
                     var topic = "KM/Signal";
                     //message = new Paho.MQTT.Message("{\"deviceName\":\"Webclient\",\"LED\":\"YELLOW\"}");
+                    //JavaScript の時はダブルコーテーションの前にバックスラッシュで、エスケープ
                     message = new Paho.MQTT.Message(msg);
                     message.destinationName = topic;
                     mqtt.send(message);
@@ -83,15 +84,16 @@
         <script>
         MQTTconnect();
         </script>
- 
+
     <p>
+    現在の時刻： {{now}}
+    <br> 
     CloudMQTT への接続状態
     <div id="status">Connection Status: Not Connected</div>
     <br>
-    <ul>
-        <li> 現在の時刻は {{now}} 。</li>
-    </ul>
     </p>
+
+    CloudMQTT からの信号機の状態:<p id="messages"></p>
 
     <figure>
     <legend> 信号機の状態 </legend>
@@ -99,7 +101,7 @@
     </figure>
 
     <p>
-    CloudMQTT に強制的に信号の色を Publish 。
+    CloudMQTT に強制的に信号の色を Publish
     <form name="smessage" action="" onsubmit="return send_messages()">
         <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;RED&quot;}"> 赤
         <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;YELLOW&quot;}"> 黄
@@ -121,8 +123,6 @@
     </br>
     信号機に {{scolor}} 色を指定しました。 <br>
     -->
-
-    CloudMQTT からの信号機の状態:<p id="messages"></p>
-
+    
     </body>
 </html>
