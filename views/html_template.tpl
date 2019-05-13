@@ -9,6 +9,19 @@
                 var host = "m15.cloudmqtt.com";
                 var port = 33415;
 
+                function onConnectionLost(){
+                    console.log("connection lost");
+                    document.getElementById("status").innerHTML = "Connection Lost";
+                    document.getElementById("messages").innerHTML ="Connection Lost";
+                    connected_flag=0;
+                }
+
+                function onFailure(message){
+                    console.log("Failed");
+                    document.getElementById("messages").innerHTML = "Connection Failed- Retrying";
+                    setTimeout(MQTTconnect, reconnectTimeout);
+                }
+
                 function onConnect(){
                     document.getElementById("messages").innerHTML="Connected to "+host +"on port "+port;
                     connected_flag=1
