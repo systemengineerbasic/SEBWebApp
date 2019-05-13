@@ -86,6 +86,7 @@
     <div id="status">Connection Status: Not Connected</div>
     <p>
     <ul>
+        <li> 現在の信号機は、{{color}] 色です</li>
         <li> 現在の時刻は {{now}} 。</li>
     </ul>
     </p>
