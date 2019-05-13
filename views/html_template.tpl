@@ -25,7 +25,7 @@
                 function onConnect(){
                     document.getElementById("messages").innerHTML="Connected to "+host+" on port "+port;
                     connected_flag=1
-                    document.getElementById("status").innerHTML = "Connected";
+                    document.getElementById("status").innerHTML = "Connected to "+host+" on port "+port;
                     console.log("on Connect " +connected_flag);
                     mqtt.subscribe("KM/Signal");
                 }
@@ -83,21 +83,28 @@
         <script>
         MQTTconnect();
         </script>
-    <div id="status">Connection Status: Not Connected</div>
+ 
     <p>
+    CloudMQTT への接続状態
+    <div id="status">Connection Status: Not Connected</div>
+    <br>
     <ul>
         <li> 現在の時刻は {{now}} 。</li>
     </ul>
     </p>
+
     <figure>
     <legend> 信号機の状態 </legend>
     <img src="{{signalpic}}">
     </figure>
+
     <p>
+    CloudMQTT に強制的に信号の色を Publish 。
     <form name="smessage" action="" onsubmit="return send_messages()">
         <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;RED&quot;}"> 赤
         <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;YELLOW&quot;}"> 黄
         <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;BLUE&quot;}"> 青
+        <br>
         <input type="submit" value="MQTT Publish">
     </form>
     </p>
@@ -115,7 +122,7 @@
     信号機に {{scolor}} 色を指定しました。 <br>
     -->
 
-    信号機の状態 (CloudMQTT 側の最新メッセージ):<p id="messages"></p>
+    CloudMQTT からの信号機の状態:<p id="messages"></p>
 
     </body>
 </html>
