@@ -96,9 +96,9 @@
     </figure>
     <p>
     <form name="smessage" action="" onsubmit="return send_messages()">
-        <input type="radio" name="input_color" value="{"deviceName":"Webclient","LED":"RED"}"> 赤
-        <input type="radio" name="input_color" value="{"deviceName":"Webclient","LED":"YELLOW"}"> 黄
-        <input type="radio" name="input_color" value="{"deviceName":"Webclient","LED":"BLUE"}"> 青
+        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;RED&quot;}"> 赤
+        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;YELLOW&quot;}"> 黄
+        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;BLUE&quot;}"> 青
         <input type="submit" value="Submit">
     </form>
     </p>
@@ -112,6 +112,6 @@
     </p>
     </br>
     信号機に {{scolor}} 色を指定しました。 <br>
-    Messages:<p id="messages"></p>
+    信号の状態:<p id="messages"></p>
     </body>
 </html>
