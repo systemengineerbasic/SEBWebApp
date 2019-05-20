@@ -36,6 +36,19 @@
                     //console.log("Message received ",r_message.payloadString);
                     console.log(out_msg);
                     document.getElementById("messages").innerHTML = out_msg;
+                    //受け取ったMQTT Message を JSON 形式でパースする
+                    json = JSON.parse( r_message.payloadString );
+                    //console.log( json.deviceName );
+                    console.log( json.LED );
+                    if(json.LED == "BLUE") {
+                        document.getElementById("trafic_signal").src = "../static/signal_blue.png";
+                    }
+                    else if (json.LED == "YELLOW"){
+                        document.getElementById("trafic_signal").src = "../static/signal_yellow.png";
+                    }
+                    else {
+                        document.getElementById("trafic_signal").src = "../static/signal_red.png";
+                    }
                 }
 
                 function onConnected(recon,url){
@@ -98,7 +111,7 @@
 
     <figure>
     <legend> 信号機 </legend>
-    <img src="{{signalpic}}">
+    <img id="trafic_signal" src="{{signalpic}}">
     </figure>
     <br>
 
