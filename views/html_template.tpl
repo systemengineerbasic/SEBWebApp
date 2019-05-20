@@ -1,5 +1,6 @@
-<html>
+<html lang="ja">
     <head>
+        <meta charset="UTF-8">
         <title> シススク サンプル Web アプリケーション</title>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript">
             </script>
@@ -10,9 +11,9 @@
                 var port = 33415;　//WebSockets Port (TLS で接続するため)
 
                 function onConnectionLost(){
-                    console.log("connection lost");
-                    document.getElementById("status").innerHTML = "Connection Lost";
-                    document.getElementById("messages").innerHTML = "Connection Lost";
+                    console.log("MQTT サーバーへのコネクションが切れました");
+                    document.getElementById("status").innerHTML = "MQTT サーバーへの接続が切れました";
+                    document.getElementById("messages").innerHTML = "MQTT サーバーへの接続が切れました";
                     connected_flag=0;
                 }
 
