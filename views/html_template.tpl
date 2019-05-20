@@ -32,15 +32,15 @@
                 }
 
                 function onMessageArrived(r_message){
-                    out_msg = "TOPIC : " + r_message.destinationName + "<br>";
-                    out_msg = out_msg + "Message : " + r_message.payloadString;
-                    //console.log("Message received ",r_message.payloadString);
+                    //out_msg = "TOPIC : " + r_message.destinationName + "<br>";
+                    out_msg = "Message : " + r_message.payloadString;
+                    console.log("Message received ",r_message.payloadString);
                     console.log(out_msg);
                     document.getElementById("messages").innerHTML = out_msg;
                     //受け取ったMQTT Message を JSON 形式でパースする
-                    json = JSON.parse( r_message.payloadString );
-                    //console.log( json.deviceName );
-                    console.log( json.LED );
+                    json = JSON.parse(r_message.payloadString);
+                    //console.log(json.deviceName);
+                    console.log(json.LED);
                     if(json.LED == "BLUE") {
                         document.getElementById("trafic_signal").src = "./static/signal_blue.png";
                     }
