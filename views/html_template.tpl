@@ -7,8 +7,8 @@
             <script type = "text/javascript" language = "javascript">
                 var mqtt;
                 var reconnectTimeout = 2000;
-                var host = "m15.cloudmqtt.com"; //CloudMQTT のホスト URI
-                var port = 33415;　//WebSockets Port (TLS で接続するため)
+                var host = "m10.cloudmqtt.com"; //CloudMQTT のホスト URI
+                var port = 34519;　//WebSockets Port (TLS で接続するため)
 
                 function onConnectionLost(){
                     console.log("MQTT サーバーへのコネクションが切れました");
@@ -62,8 +62,8 @@
                     var options = {
                         useSSL:true,
                         timeout: 3,
-                        userName:"niccngso",
-                        password:"6UKWREecCBYB",
+                        userName:"rkinkmdk",
+                        password:"IAzU6d_IdX0W",
                         onSuccess: onConnect,
                         onFailure: onFailure,
                     };
