@@ -41,13 +41,13 @@
                     //console.log( json.deviceName );
                     console.log( json.LED );
                     if(json.LED == "BLUE") {
-                        document.getElementById("trafic_signal").src = "../static/signal_blue.png";
+                        document.getElementById("trafic_signal").src = "./static/signal_blue.png";
                     }
                     else if (json.LED == "YELLOW"){
-                        document.getElementById("trafic_signal").src = "../static/signal_yellow.png";
+                        document.getElementById("trafic_signal").src = "./static/signal_yellow.png";
                     }
                     else {
-                        document.getElementById("trafic_signal").src = "../static/signal_red.png";
+                        document.getElementById("trafic_signal").src = "./static/signal_red.png";
                     }
                 }
 
@@ -111,7 +111,7 @@
 
     <figure>
     <legend> 信号機 </legend>
-    <img id="trafic_signal" src="{{signalpic}}">
+    <img id="trafic_signal" src="./static/signal_full.png">
     </figure>
     <br>
 
