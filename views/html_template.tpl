@@ -24,7 +24,7 @@
 
                 function onConnect(){
                     document.getElementById("messages").innerHTML="Connected to "+host+" on port "+port;
-                    connected_flag=1
+                    connected_flag=1;
                     document.getElementById("status").innerHTML = "Connected to "+host+" on port "+port;
                     console.log("on Connect " +connected_flag);
                     mqtt.subscribe("KM/Signal");
