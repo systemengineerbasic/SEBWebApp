@@ -91,35 +91,8 @@
                     mqtt.send(message);
                     return false;
                 }
-                function clickBtn_Blue(){
-                    var json_msg = "{\"deviceName\":\"Webclient\",\"Signal\":\"BLUE\"}";
-                    var topic = "KM/Command";
-                    console.log(json_msg);
-                    message = new Paho.MQTT.Message(json_msg);
-                    message.destinationName = topic;
-                    mqtt.send(message);
-                    return false;
-                }
-                function clickBtn_Yellow(){
-                    var json_msg = "{\"deviceName\":\"Webclient\",\"Signal\":\"YELLOW\"}";
-                    var topic = "KM/Command";
-                    console.log(json_msg);
-                    message = new Paho.MQTT.Message(json_msg);
-                    message.destinationName = topic;
-                    mqtt.send(message);
-                    return false;
-                }
-                function clickBtn_Red(){
-                    var json_msg = "{\"deviceName\":\"Webclient\",\"Signal\":\"RED\"}";
-                    var topic = "KM/Command";
-                    console.log(json_msg);
-                    message = new Paho.MQTT.Message(json_msg);
-                    message.destinationName = topic;
-                    mqtt.send(message);
-                    return false;
-                }
-                function clickBtn_Auto(){
-                    var json_msg = "{\"deviceName\":\"Webclient\",\"Signal\":\"AUTO\"}";
+                function clickBtn(color){
+                    var json_msg = "{\"deviceName\":\"Webclient\",\"Signal\":\"" + color + "\"}";
                     var topic = "KM/Command";
                     console.log(json_msg);
                     message = new Paho.MQTT.Message(json_msg);
@@ -165,10 +138,10 @@
     </form>
     -->
 
-    <input type="button" value="青" onclick="clickBtn_Blue()" style="color:#ffffff;background-color:#4EE27F;WIDTH:40px; HEIGHT:40px;"/>
-    <input type="button" value="黄" onclick="clickBtn_Yellow()" style="color:#000000;background-color:#FFFF00;WIDTH:40px; HEIGHT:40px;"/>
-    <input type="button" value="赤" onclick="clickBtn_Red()" style="color:#ffffff;background-color:#FF0000;WIDTH:40px; HEIGHT:40px;"/>
-    <input type="button" value="自動" onclick="clickBtn_Auto()" style="color:#000000;background-color:#808080;WIDTH:80px; HEIGHT:40px;"/>
+    <input type="button" value="青" onclick="clickBtn(&quot;BLUE&quot;)" style="color:#ffffff;background-color:#4EE27F;WIDTH:40px; HEIGHT:40px;"/>
+    <input type="button" value="黄" onclick="clickBtn(&quot;YELLOW&quot;)" style="color:#000000;background-color:#FFFF00;WIDTH:40px; HEIGHT:40px;"/>
+    <input type="button" value="赤" onclick="clickBtn(&quot;RED&quot;)" style="color:#ffffff;background-color:#FF0000;WIDTH:40px; HEIGHT:40px;"/>
+    <input type="button" value="自動" onclick="clickBtn(&quot;AUTO&quot;)" style="color:#000000;background-color:#808080;WIDTH:80px; HEIGHT:40px;"/>
     </p>
     <p>
 
