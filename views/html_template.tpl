@@ -83,7 +83,7 @@
                     }
                     var msg = document.forms["smessage"]["input_color"].value;
                     console.log(msg);
-                    var topic = "KM/Signal";
+                    var topic = "KM/Command";
                     //message = new Paho.MQTT.Message("{\"deviceName\":\"Webclient\",\"LED\":\"YELLOW\"}");
                     //JavaScript の時はダブルコーテーションの前にバックスラッシュで、エスケープ
                     message = new Paho.MQTT.Message(msg);
@@ -119,9 +119,10 @@
     <p>
     CloudMQTT に強制的に信号の色を Publish
     <form name="smessage" action="" onsubmit="return send_messages()">
-        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;RED&quot;}"> 赤
-        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;YELLOW&quot;}"> 黄
-        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;BLUE&quot;}"> 青
+        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;RED&quot;}"> 赤
+        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;YELLOW&quot;}"> 黄
+        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;BLUE&quot;}"> 青
+        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;AUTO&quot;}"> Auto
         <br>
         <input type="submit" value="MQTT Publish">
     </form>
