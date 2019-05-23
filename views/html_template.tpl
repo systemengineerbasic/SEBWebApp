@@ -83,10 +83,19 @@
                     }
                     var msg = document.forms["smessage"]["input_color"].value;
                     console.log(msg);
-                    var topic = "KM/Signal";
+                    var topic = "KM/Command";
                     //message = new Paho.MQTT.Message("{\"deviceName\":\"Webclient\",\"LED\":\"YELLOW\"}");
                     //JavaScript の時はダブルコーテーションの前にバックスラッシュで、エスケープ
                     message = new Paho.MQTT.Message(msg);
+                    message.destinationName = topic;
+                    mqtt.send(message);
+                    return false;
+                }
+                function clickBtn(color){
+                    var json_msg = "{\"deviceName\":\"Webclient\",\"Signal\":\"" + color + "\"}";
+                    var topic = "KM/Command";
+                    console.log(json_msg);
+                    message = new Paho.MQTT.Message(json_msg);
                     message.destinationName = topic;
                     mqtt.send(message);
                     return false;
@@ -117,14 +126,22 @@
     <br>
 
     <p>
-    CloudMQTT に強制的に信号の色を Publish
+    CloudMQTT に強制的に信号の色を Publish<BR>
+    <!--
     <form name="smessage" action="" onsubmit="return send_messages()">
-        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;RED&quot;}"> 赤
-        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;YELLOW&quot;}"> 黄
-        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;LED&quot;:&quot;BLUE&quot;}"> 青
-        <br>
+        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;RED&quot;}"> 赤
+        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;YELLOW&quot;}"> 黄
+        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;BLUE&quot;}"> 青
+        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;AUTO&quot;}"> Auto
+       <br>
         <input type="submit" value="MQTT Publish">
     </form>
+    -->
+
+    <input type="button" value="青" onclick="clickBtn(&quot;BLUE&quot;)" style="color:#ffffff;background-color:#4EE27F;WIDTH:40px; HEIGHT:40px;"/>
+    <input type="button" value="黄" onclick="clickBtn(&quot;YELLOW&quot;)" style="color:#000000;background-color:#FFFF00;WIDTH:40px; HEIGHT:40px;"/>
+    <input type="button" value="赤" onclick="clickBtn(&quot;RED&quot;)" style="color:#ffffff;background-color:#FF0000;WIDTH:40px; HEIGHT:40px;"/>
+    <input type="button" value="自動" onclick="clickBtn(&quot;AUTO&quot;)" style="color:#000000;background-color:#808080;WIDTH:80px; HEIGHT:40px;"/>
     </p>
     <p>
 
