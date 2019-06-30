@@ -30,15 +30,17 @@
                     //受け取ったMQTT Message を JSON 形式でパースする
                     json = JSON.parse(r_message.payloadString);
                     //console.log(json.deviceName);
-                    console.log(json.LED);
-                    if(json.LED == "BLUE") {
+                    console.log(json.Signal);
+                    if(json.Signal == "BLUE") {
                         document.getElementById("trafic_signal").src = "./static/signal_blue.png";
                     }
-                    else if (json.LED == "YELLOW"){
+                    else if (json.Signal == "YELLOW"){
                         document.getElementById("trafic_signal").src = "./static/signal_yellow.png";
                     }
-                    else {
+                    else if (json.Signal == "RED"){
                         document.getElementById("trafic_signal").src = "./static/signal_red.png";
+                    }else{
+                        document.getElementById("trafic_signal").src = "./static/signal_full.png";
                     }
                 }
                 function onConnected(recon,url){
