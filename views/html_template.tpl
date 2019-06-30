@@ -83,7 +83,7 @@
                     }
                     var msg = document.forms["smessage"]["input_color"].value;
                     console.log(msg);
-                    var topic = "KM/Command";
+                    var topic = "KM/Signal";
                     //message = new Paho.MQTT.Message("{\"deviceName\":\"Webclient\",\"LED\":\"YELLOW\"}");
                     //JavaScript の時はダブルコーテーションの前にバックスラッシュで、エスケープ
                     message = new Paho.MQTT.Message(msg);
@@ -93,7 +93,7 @@
                 }
                 function clickBtn(color){
                     var json_msg = "{\"deviceName\":\"Webclient\",\"Signal\":\"" + color + "\"}";
-                    var topic = "KM/Command";
+                    var topic = "KM/Signal";
                     console.log(json_msg);
                     message = new Paho.MQTT.Message(json_msg);
                     message.destinationName = topic;
@@ -127,17 +127,6 @@
 
     <p>
     CloudMQTT に強制的に信号の色を Publish<BR>
-    <!--
-    <form name="smessage" action="" onsubmit="return send_messages()">
-        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;RED&quot;}"> 赤
-        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;YELLOW&quot;}"> 黄
-        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;BLUE&quot;}"> 青
-        <input type="radio" name="input_color" value="{&quot;deviceName&quot;:&quot;Webclient&quot;,&quot;Signal&quot;:&quot;AUTO&quot;}"> Auto
-       <br>
-        <input type="submit" value="MQTT Publish">
-    </form>
-    -->
-
     <input type="button" value="青" onclick="clickBtn(&quot;BLUE&quot;)" style="color:#ffffff;background-color:#4EE27F;WIDTH:40px; HEIGHT:40px;"/>
     <input type="button" value="黄" onclick="clickBtn(&quot;YELLOW&quot;)" style="color:#000000;background-color:#FFFF00;WIDTH:40px; HEIGHT:40px;"/>
     <input type="button" value="赤" onclick="clickBtn(&quot;RED&quot;)" style="color:#ffffff;background-color:#FF0000;WIDTH:40px; HEIGHT:40px;"/>
@@ -145,7 +134,8 @@
     </p>
     <p>
 
-    <!-- post Method のフォームを Python に送るサンプル フォーム
+    <!-- 
+        post Method のフォームを Python に送るサンプル フォーム
     <form method="post" action="/">
         <input type="radio" name="input_color" value="RED"> 赤
         <input type="radio" name="input_color" value="YELLOW"> 黄
