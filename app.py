@@ -10,6 +10,6 @@ def server_static(file_path):
 @route("/")
 def hello_world():
     now = datetime.now()
-    return template('html_template', now=now)
+    return template('html_template', now=now, scolor='')
 
 run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
