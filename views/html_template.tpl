@@ -30,14 +30,14 @@
                     //受け取ったMQTT Message を JSON 形式でパースする
                     json = JSON.parse(r_message.payloadString);
                     //console.log(json.deviceName);
-                    console.log(json.Signal);
-                    if(json.Signal == "BLUE") {
+                    console.log(json.LED);
+                    if(json.LED == "BLUE") {
                         document.getElementById("trafic_signal").src = "./static/signal_blue.png";
                     }
-                    else if (json.Signal == "YELLOW"){
+                    else if (json.LED == "YELLOW"){
                         document.getElementById("trafic_signal").src = "./static/signal_yellow.png";
                     }
-                    else if (json.Signal == "RED"){
+                    else if (json.LED == "RED"){
                         document.getElementById("trafic_signal").src = "./static/signal_red.png";
                     }else{
                         document.getElementById("trafic_signal").src = "./static/signal_full.png";
@@ -94,7 +94,7 @@
                     return false;
                 }
                 function clickBtn(color){
-                    var json_msg = "{\"deviceName\":\"Webclient\",\"Signal\":\"" + color + "\"}";
+                    var json_msg = "{\"deviceName\":\"Webclient\",\"LED\":\"" + color + "\"}";
                     var topic = "KM/Signal";
                     console.log(json_msg);
                     message = new Paho.MQTT.Message(json_msg);
