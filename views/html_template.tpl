@@ -112,9 +112,7 @@
     現在の時刻： {{now}}
     </p> 
 
-    CloudMQTT 接続 Status：
-    <div id="status">Connection Status: Not Connected</div>
-    <br>
+    CloudMQTT 接続 Status： <div id="status">Connection Status: Not Connected</div>
     <br>
 
     信号機の状態：<p id="messages"></p>
@@ -127,10 +125,10 @@
 
     <p>
     CloudMQTT に強制的に信号の色を Publish<BR>
-    <input type="button" value="青" onclick="clickBtn(BLUE)" style="color:#ffffff;background-color:#4EE27F;WIDTH:40px; HEIGHT:40px;"/>
-    <input type="button" value="黄" onclick="clickBtn(YELLOW)" style="color:#000000;background-color:#FFFF00;WIDTH:40px; HEIGHT:40px;"/>
-    <input type="button" value="赤" onclick="clickBtn(RED)" style="color:#ffffff;background-color:#FF0000;WIDTH:40px; HEIGHT:40px;"/>
-    <input type="button" value="自動" onclick="clickBtn(AUTO)" style="color:#000000;background-color:#808080;WIDTH:80px; HEIGHT:40px;"/>
+    <input type="button" value="青" onclick="clickBtn(&quot;BLUE&quot;)" style="color:#ffffff;background-color:#4EE27F;WIDTH:40px; HEIGHT:40px;"/>
+    <input type="button" value="黄" onclick="clickBtn(&quot;YELLOW&quot;)" style="color:#000000;background-color:#FFFF00;WIDTH:40px; HEIGHT:40px;"/>
+    <input type="button" value="赤" onclick="clickBtn(&quot;RED&quot;)" style="color:#ffffff;background-color:#FF0000;WIDTH:40px; HEIGHT:40px;"/>
+    <input type="button" value="自動" onclick="clickBtn(&quot;AUTO&quot;)" style="color:#000000;background-color:#808080;WIDTH:80px; HEIGHT:40px;"/>
     </p>
     <p>
 
